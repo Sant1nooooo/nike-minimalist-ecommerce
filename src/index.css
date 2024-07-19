@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ul li{
+  font-family: "Blinker", sans-serif;
+}
+
+.header-section .container p{
+  font-family: "Permanent Marker", cursive;
+}
+.popular-products-section .container .popular-product{
+  transition: all 0.4s ease;
+  font-family: "Blinker", sans-serif;
+}
+.popular-product:hover{
+  transform: scale(1.01)
+}
+.popular-product:hover .product-details{
+  background-color: gray;
+}
+
+.banner-section .container .details-container p:first-child{
+  font-family: "Permanent Marker", cursive;
+}
+
+.categories{
+  font-family: "Blinker", sans-serif;
+}
