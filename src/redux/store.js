@@ -7,6 +7,7 @@ const customizedThunk = storeAPI => next => action => {
   console.log('CurrentState:', storeAPI.getState());
   const result = next(action)
   console.log('Updated State:', storeAPI.getState());
+  console.log('=================================================');
   return result
 }
 

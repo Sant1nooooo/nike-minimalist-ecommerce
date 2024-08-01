@@ -1,6 +1,9 @@
-import localforage from "localforage";
+import { removeCartProduct, increaseQuantity, decreaseQuantity,changeFilter, addProduct } from "../redux/actionCreator";
+
 import { redirect } from "react-router-dom";
-import { changeFilter } from "../redux/actionCreator";
+import { products } from "../data/storage";
+import localforage from "localforage";
+//Login and Register Functions
 export async function handleLogin({ request })
 {
   const formData = await request.formData();
@@ -42,7 +45,33 @@ export async function handleSignUp({ request })
   return redirect('/login')
 }
 
+
+//Events Functions
 export function handleChangeFilter(dispatch, newFilter)
 {
   dispatch(changeFilter(newFilter))
+}
+
+export function handleAddToCart(dispatch, currentProduct, subPrice, quantity){
+  dispatch(addProduct(currentProduct, subPrice, quantity));
+}
+
+export function handleRemoveCartProduct(dispatch, id)
+{
+  dispatch(removeCartProduct(id))
+}
+export function handleIncreaseQuantity(dispatch, id)
+{
+  dispatch(increaseQuantity(id))
+}
+export function handleDescreaseQuantity(dispatch, id)
+{
+  dispatch(decreaseQuantity(id))
+}
+
+
+//Getter Function
+export function getProduct(id)
+{
+  return products.find(eachProduct => eachProduct.id.toString() === id);
 }

@@ -4,8 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
-ul li{
+
+*
+{
   font-family: "Blinker", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid limegreen !important; */
 }
 
 .header-section .container p{
@@ -13,7 +19,6 @@ ul li{
 }
 .popular-products-section .container .popular-product{
   transition: all 0.4s ease;
-  font-family: "Blinker", sans-serif;
 }
 .popular-product:hover{
   transform: scale(1.01)
@@ -26,6 +31,13 @@ ul li{
   font-family: "Permanent Marker", cursive;
 }
 
-.categories{
-  font-family: "Blinker", sans-serif;
+.specific-product-section .container .specific-product-title{
+  -webkit-text-stroke: 1px #000
+}
+
+@media(max-width: 640px)
+{
+  .specific-product-section .container .specific-product-title{
+    writing-mode: vertical-rl;
+  }
 }

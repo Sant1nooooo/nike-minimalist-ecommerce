@@ -1,5 +1,6 @@
 import { handleLogin as loginAction, handleSignUp as signUpAction } from './utils/action.js'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom'
+import SpecificProduct, {loader as specificProductLoader} from './pages/SpecificProduct.jsx'
 import Categories from './pages/Categories.jsx'
 import Index from './components/Home/Index.jsx'
 import Register from './pages/Register.jsx'
@@ -15,18 +16,17 @@ const router = createBrowserRouter([
   { path: '/', element: <Home/>, children:[
     { index: true, element: <Index/> },
     { path: '/categories', element: <Categories/>},
-    // { path: '/categories/:productID', element: },
+    { path: '/categories/:productID', element: <SpecificProduct/>, loader: specificProductLoader},
   ]},
   { path: '/login', element: <Login/>, action: loginAction },
   { path: '/signUp', element: <Register/>, action: signUpAction },
 ]);
 
 
-
+//<React.StrictMode></React.StrictMode>
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router}/>
     </Provider>
-  </React.StrictMode>
+
 );

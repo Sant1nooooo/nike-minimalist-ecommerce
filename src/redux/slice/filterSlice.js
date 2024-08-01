@@ -32,6 +32,6 @@ export const filteredProducts = createSelector(
         return eachProduct.id
       }
     })
-    return idList
+    return idList;
   }
 )

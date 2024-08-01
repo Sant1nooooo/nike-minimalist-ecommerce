@@ -1,6 +1,7 @@
 import Popular from "./Popular";
 import Header from "./Header";
 import Banner from "./Banner";
+import TrendingProducts from "../TrendingProducts";
 export default function Index()
 {
   return(
@@ -8,6 +9,7 @@ export default function Index()
       <Header/>
       <Popular/>
       <Banner/>
+      <TrendingProducts/>
     </>
   )
 }
