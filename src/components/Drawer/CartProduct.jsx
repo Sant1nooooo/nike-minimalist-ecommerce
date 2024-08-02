@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { memo } from "react";
 function CartProduct({ currentCartProduct }){
   const dispatch = useDispatch();
-  // console.log('Re-rendering',currentCartProduct.name,'because its state changed');
+  console.log('Re-rendering',currentCartProduct.name,'because its state changed');
   return(
     <>
       <div className="img-container h-[100%] w-[30%]">

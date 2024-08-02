@@ -1,11 +1,9 @@
+import { filteredProducts } from "../redux/slice/filterSlice";
 import { convertNumber } from "../utils/helperFunction";
 import { useSelector, useDispatch } from 'react-redux';
 import { handleChangeFilter } from "../utils/action";
-import { useNavigate } from "react-router-dom";
-import { filteredProducts } from "../redux/slice/filterSlice";
 import { Link } from "react-router-dom";
 export default function Categories(){
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const currentFilter = useSelector(state => state.filter.currentFilter);

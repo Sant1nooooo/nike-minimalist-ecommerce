@@ -34,7 +34,10 @@
 .specific-product-section .container .specific-product-title{
   -webkit-text-stroke: 1px #000
 }
-
+.credit-card{
+  background: rgb(154, 132, 110);
+  background: linear-gradient(55deg, rgba(154, 132, 110, 0.9220063025210083) 31%, rgba(207, 175, 143, 0.9248074229691877) 63%, rgba(201, 170, 139, 0.7819502801120448) 72%, rgba(157, 129, 100, 0.4654236694677871) 88%);
+}
 @media(max-width: 640px)
 {
   .specific-product-section .container .specific-product-title{

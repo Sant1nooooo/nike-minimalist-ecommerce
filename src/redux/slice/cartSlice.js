@@ -2,8 +2,7 @@ import { createSelector } from "reselect";
 
 const initialData = {
   subTotal: 0,
-  cartList:[
-  ]
+  cartList:[]
 }
 
 export default function cartReducer(state = initialData, action)

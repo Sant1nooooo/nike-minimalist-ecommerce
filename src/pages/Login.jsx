@@ -4,9 +4,10 @@ export default function Login(){
   const navigate = useNavigate();
   const status = useActionData();
   const sessionAcccount = sessionStorage.getItem('account');
-  useEffect(()=>{ if(sessionAcccount) navigate('/')
-    alert('Email: jerome.bercero@gmail.com \nPassword: 123')
+  useEffect(()=>{ 
+    if(sessionAcccount) return navigate('/');
   }, []);
+  
   return(
     <div className="h-screen pt-[50px]">
       <div className="bg-white flex items-center justify-start flex-col m-auto max-w-[700px]">

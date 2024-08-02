@@ -16,11 +16,17 @@ export default function Navigation()
 {
   const cartState = useSelector(state => state.cart);
   const [isOpen, setIsOpen] = useState(false);
-  const [isNavigationOpen, setIsNavigationOpen] = useState(true);
-  // const idList = useSelector(cartProductID);
+  const [isNavigationOpen, setIsNavigationOpen] = useState(false);
+  // const idList = useSelector(cartProductID); //FOR DEBUGGING PURPOSES
   const navigationSection = useRef();
 
+  function handleSetIsOpen(){
+    setIsOpen(prevValue => !prevValue);
+  }
 
+  function handleSetIsNavigationOpen(){
+    setIsNavigationOpen(prevValue => !prevValue);
+  }
   return(
     <div ref={navigationSection} className="z-[998] navigation-section shadow-[0px_0px_5px_rgba(0,0,0,0.3),0_0_4px_rgba(0,0,0,0.1)_inset] bg-white sticky top-[0px] px-[20px]">
       <div className="bg-white flex items-center justify-between max-w-[1570px] mx-auto">
@@ -28,31 +34,31 @@ export default function Navigation()
         <div className={`bg-white sm:block ${isNavigationOpen ? 'hidden' : ''} sm:static absolute sm:w-auto w-full left-0 top-full sm:h-auto h-screen`}>
             <ul className="flex sm:flex-row flex-col sm:h-auto h-[90%] items-center">
               <li className="text-[20px] font-medium mr-[50px] sm:mb-0 mb-[100px]">
-                <Link to="/" onClick={()=>{setIsNavigationOpen(prevValue => !prevValue)}}>HOME</Link>
+                <Link to="/" onClick={handleSetIsNavigationOpen}>HOME</Link>
               </li>
               <li className="text-[20px] font-medium mr-[50px] sm:mb-0 mb-[100px]">
-                <Link to="/categories" onClick={()=>{setIsNavigationOpen(prevValue => !prevValue)}}>CATEGORIES</Link>
+                <Link to="/categories" onClick={handleSetIsNavigationOpen}>CATEGORIES</Link>
               </li>
               <li className="w-full flex items-center justify-center">
                 <button onClick={()=>{
-                  setIsOpen(prevValue => !prevValue);
-                  setIsNavigationOpen(prevValue => !prevValue);
+                   handleSetIsOpen();
+                  handleSetIsNavigationOpen();
                   }}>
                   <img src={cartIcon} alt="" height={26} width={26} className="sm:block hidden"/>
                   <p className="sm:hidden block text-[20px] font-medium mr-[50px] sm:mb-0 mb-[100px]"> CART</p>
                 </button>
               </li>
               <li>
-                <button onClick={()=>{setIsNavigationOpen(prevValue => !prevValue)}} className="sm:hidden block text-[20px] font-medium mr-[50px]"> CLOSE </button>
+                <button onClick={handleSetIsNavigationOpen} className="sm:hidden block text-[20px] font-medium mr-[50px]"> CLOSE </button>
               </li>
             </ul>
           </div>
-          <button className="sm:hidden block" onClick={()=>{setIsNavigationOpen(prevValue => !prevValue)}}>
-            <img src={menuIcon} alt="nike-logo" height={35} width={35}/>
+          <button className="sm:hidden block" onClick={handleSetIsNavigationOpen}>
+            <img src={menuIcon} alt="menu-icon" height={35} width={35}/>
           </button>
       </div>
       <div className={`drawer h-screen sm:w-[550px] w-full bg-white absolute top-0 right-0 px-[30px] pt-[50px] pb-[10px] ${isOpen ? 'block' : 'hidden'}`}>
-        <button onClick={()=>{ setIsOpen(prevValue => !prevValue) }}>
+        <button onClick={handleSetIsOpen}>
           <img src={closeIcon} alt="close-button" height={15} width={15}/>
         </button>
         <p className="text-[20px] mb-[10px]">Your Shopping Cart ({cartState.cartList.length})</p>
@@ -70,7 +76,9 @@ export default function Navigation()
             <p className='text-[30px] font-semibold'>Subtotal:</p>
             <p className='text-[30px] font-semibold'>{convertNumber(cartState.subTotal)}.00 Php</p>
           </div>
-          <button className="border-2 border-solid border-[black] py-[10px] px-[20px] text-[20px] hover:bg-black hover:text-white transition-[0.5s] duration-[ease]"> Go to Checkout </button>
+          <Link to={'/checkout'} onClick={()=>{setIsOpen(prevValue => !prevValue)}}>
+            <p className="border-2 border-solid border-[black] py-[10px] px-[20px] text-[20px] hover:bg-black hover:text-white transition-[0.5s] duration-[ease]"> Go to Checkout </p>
+          </Link>
         </div>
       </div>
     </div>
