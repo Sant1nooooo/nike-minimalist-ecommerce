@@ -6,11 +6,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useRef } from "react";
 
-import nikeLogo from '../assets/nike-logo.svg';
-import cartIcon from '../assets/cart.svg';
-import closeIcon from '../assets/close.svg';
-import menuIcon from '../assets/menu.png';
-
 
 export default function Navigation()
 {
@@ -30,7 +25,7 @@ export default function Navigation()
   return(
     <div ref={navigationSection} className="z-[998] navigation-section shadow-[0px_0px_5px_rgba(0,0,0,0.3),0_0_4px_rgba(0,0,0,0.1)_inset] bg-white sticky top-[0px] px-[20px]">
       <div className="bg-white flex items-center justify-between max-w-[1570px] mx-auto">
-        <img src={nikeLogo} alt="nike-logo" height={85} width={85}/>
+        <img src="/assets/nike-logo.svg" alt="nike-logo" height={85} width={85}/>
         <div className={`bg-white sm:block ${isNavigationOpen ? 'hidden' : ''} sm:static absolute sm:w-auto w-full left-0 top-full sm:h-auto h-screen`}>
             <ul className="flex sm:flex-row flex-col sm:h-auto h-[90%] items-center">
               <li className="text-[20px] font-medium mr-[50px] sm:mb-0 mb-[100px]">
@@ -44,7 +39,7 @@ export default function Navigation()
                    handleSetIsOpen();
                   handleSetIsNavigationOpen();
                   }}>
-                  <img src={cartIcon} alt="" height={26} width={26} className="sm:block hidden"/>
+                  <img src="/assets/cart.svg" alt="" height={26} width={26} className="sm:block hidden"/>
                   <p className="sm:hidden block text-[20px] font-medium mr-[50px] sm:mb-0 mb-[100px]"> CART</p>
                 </button>
               </li>
@@ -54,12 +49,12 @@ export default function Navigation()
             </ul>
           </div>
           <button className="sm:hidden block" onClick={handleSetIsNavigationOpen}>
-            <img src={menuIcon} alt="menu-icon" height={35} width={35}/>
+            <img src="/assets/menu.png" alt="menu-icon" height={35} width={35}/>
           </button>
       </div>
       <div className={`drawer h-screen sm:w-[550px] w-full bg-white absolute top-0 right-0 px-[30px] pt-[50px] pb-[10px] ${isOpen ? 'block' : 'hidden'}`}>
         <button onClick={handleSetIsOpen}>
-          <img src={closeIcon} alt="close-button" height={15} width={15}/>
+          <img src="/assets/close.svg" alt="close-button" height={15} width={15}/>
         </button>
         <p className="text-[20px] mb-[10px]">Your Shopping Cart ({cartState.cartList.length})</p>
         <div className="drawer-container h-[78%] overflow-y-scroll">

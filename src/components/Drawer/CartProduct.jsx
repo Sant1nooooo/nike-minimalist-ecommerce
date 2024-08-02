@@ -1,6 +1,5 @@
 import { handleRemoveCartProduct, handleIncreaseQuantity, handleDescreaseQuantity } from "../../utils/action";
 import { convertNumber } from "../../utils/helperFunction";
-import trashIcon from '../../assets/trash.svg'
 import { useDispatch } from "react-redux";
 import { memo } from "react";
 function CartProduct({ currentCartProduct }){
@@ -28,7 +27,7 @@ function CartProduct({ currentCartProduct }){
             <button onClick={()=>{handleIncreaseQuantity(dispatch, currentCartProduct.id)}} className='bg-black text-white py-[5px] px-[15px]'>+</button>
           </div>
           <button onClick={()=>{handleRemoveCartProduct(dispatch, currentCartProduct.id)}}>
-            <img src={trashIcon} alt="" height={20} width={20}/>
+            <img src="/assets/trash.svg" alt="" height={20} width={20}/>
           </button>
         </div>
       </div>

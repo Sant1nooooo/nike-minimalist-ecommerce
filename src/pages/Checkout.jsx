@@ -30,7 +30,7 @@ export default function Checkout(){
         </div>
         <div className="footer flex items-center justify-between">
           <Link to="/categories" className="flex items-center justify-center text-[25px]">
-            <img src="./src/assets/left-chevron.png" alt="left-arrow" height={30} width={30}/> Continue Shopping
+            <img src="/assets/left-chevron.png" alt="left-arrow" height={30} width={30}/> Continue Shopping
           </Link>
           <div className="flex items-center justify-center">
             <p className="text-[#808080] text-[20px] mr-[8px]">Subtotal:</p>
@@ -40,13 +40,13 @@ export default function Checkout(){
       </div>
       <div className="right w-[40%] bg-[#f6f3f3] py-[50px] px-[50px]">
         <p className="flex items-center text-[25px] mb-[50px]">
-          <img src="./src/assets/left-chevron.png" alt="left-arrow" height={30} width={30} className="mr-[10px]"/> Card Details
+          <img src="/assets/left-chevron.png" alt="left-arrow" height={30} width={30} className="mr-[10px]"/> Card Details
         </p>
         <div className="credit-card w-[70%] rounded-2xl bg-white overflow-hidden py-[35px] px-[25px] text-white mx-auto mb-[50px] relative">
           <p className="mb-[20px]">{cardNumber}</p>
           <p className="mb-[20px]">09/27</p>
           <p>{cardName}</p>
-          <img src="./src/assets/mastercard.png" alt="mastercard-logo" height={70} width={70} className="absolute bottom-[10px] right-[30px]"/>
+          <img src="/assets/mastercard.png" alt="mastercard-logo" height={70} width={70} className="absolute bottom-[10px] right-[30px]"/>
         </div>
 
         <p className="text-[15px] text-[#808080]">Name on card</p>

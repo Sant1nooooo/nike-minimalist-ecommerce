@@ -23,7 +23,7 @@ function CheckoutProduct({checkoutProduct}){
       </div>
       <p className="text-[25px]">{convertNumber(checkoutProduct.totalPrice)}.00 Php</p>
       <button onClick={()=>{handleRemoveCartProduct(dispatch, checkoutProduct.id)}}>
-        <img src="./src/assets/trash.svg" alt="" height={25} width={25}/>
+        <img src="/assets/trash.svg" alt="" height={25} width={25}/>
       </button>
     </>
   );

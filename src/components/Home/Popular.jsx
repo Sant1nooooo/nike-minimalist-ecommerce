@@ -1,6 +1,7 @@
 import { convertNumber } from "../../utils/helperFunction";
 import {products} from '../../data/storage'
 import { Link } from "react-router-dom";
+
 export default function Popular()
 {
   return(
@@ -8,7 +9,7 @@ export default function Popular()
       <div className="container max-w-[1570px] mx-auto">
         <p className='text-[25px] font-semibold mb-[25px]'>Popular Right Now!</p>
         <div className={`grid xl:grid-rows-[500px_500px] lg:grid-rows-[450px_450px] md:grid-cols-[1fr_1fr_1fr_1fr] sm:grid-cols-[1fr_1fr_1fr] grid-cols-[1fr_1fr] max-w-[1500px] gap-[10px]`}>
-          { products.map(eachProduct=>{
+          { products.map(eachProduct =>{
             if(eachProduct.isPopular){
               return(
                 <Link key={eachProduct.id} to={`/categories/${eachProduct.id}`}>

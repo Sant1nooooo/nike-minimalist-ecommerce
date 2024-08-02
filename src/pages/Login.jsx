@@ -1,7 +1,6 @@
 import { Form, useNavigate, useActionData } from "react-router-dom";
 import { useEffect } from "react";
 
-import nikeLogo from '../assets/nike-logo.svg';
 
 export default function Login(){
   const navigate = useNavigate();
@@ -14,7 +13,7 @@ export default function Login(){
   return(
     <div className="h-screen pt-[50px]">
       <div className="bg-white flex items-center justify-start flex-col m-auto max-w-[700px]">
-        <img src={nikeLogo} alt="nike-logo"  height={25} width={50} className="mb-[35px]"/>
+        <img src="/assets/nike-logo.svg" alt="nike-logo"  height={25} width={50} className="mb-[35px]"/>
         <p className="text-[30px] font-bold mb-[15px]">BE FIRST TO KNOW</p>
         <p className="text-gray-400 text-center mb-[15px]">Sign Up  for Nike emails to be first to see <br/>the inspiring content, news and exclusive offers.</p>
         
