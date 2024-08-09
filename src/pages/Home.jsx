@@ -8,7 +8,9 @@ export default function Home(){
   const sessionAcccount = sessionStorage.getItem('account');
   const reference = useRef();
   
-  useEffect(()=>{ if(!sessionAcccount) navigate('/login') }, []);
+  useEffect(()=>{ 
+    if(!sessionAcccount) navigate('/login');
+    }, []);
   
   return(
     <div ref={reference} className="site-wrapper">

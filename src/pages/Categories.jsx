@@ -5,12 +5,9 @@ import { handleChangeFilter } from "../utils/action";
 import { Link } from "react-router-dom";
 export default function Categories(){
   const dispatch = useDispatch();
-
   const currentFilter = useSelector(state => state.filter.currentFilter);
-  // console.log(currentFilter);
-  
   const products = useSelector(filteredProducts);
-  // console.log('Filtered IDS:', ids);
+  
   return (
     <div className="categories pt-[60px] pb-[100px] px-[10px]">
       <div className="container max-w-[1500px] bg-white mx-auto">

@@ -18,6 +18,7 @@ export default function Product(){
   const dispatch = useDispatch();
   const subImageElements = useRef([]);
   const mainImage = useRef();
+  
   useEffect(()=>{
     function handleMouseOver(event){
       mainImage.current.src = event.currentTarget.getAttribute('src');
