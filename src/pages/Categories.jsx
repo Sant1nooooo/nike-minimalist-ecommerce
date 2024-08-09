@@ -7,14 +7,14 @@ export default function Categories(){
   const dispatch = useDispatch();
   const currentFilter = useSelector(state => state.filter.currentFilter);
   const products = useSelector(filteredProducts);
-  
+
   return (
     <div className="categories pt-[60px] pb-[100px] px-[10px]">
       <div className="container max-w-[1500px] bg-white mx-auto">
         <div className="header mb-[75px]">
           <div className="flex mb-[60px]">
             <div className="flex items-center justify-center">
-              <img src="./src/assets/backward.png" alt="" height={20} width={20} className='mr-[2px]'/>
+              <img src="/assets/backward.png" alt="" height={20} width={20} className='mr-[2px]'/>
               <p className='text-[16px]'>Home</p>
             </div>
             <p className="grow text-center text-[25px] font-bold">ALL</p>
